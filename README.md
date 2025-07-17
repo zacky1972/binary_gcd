@@ -11,29 +11,21 @@ An efficient Elixir implementation of the binary GCD algorithm (Stein's algorith
 
 ## Installation
 
+### From Hex (Recommended)
+
 Add `binary_gcd` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
   [
-    {:binary_gcd, git: "https://github.com/your-username/binary_gcd.git"}
-  ]
-end
-```
-
-Or specify a branch or tag:
-
-```elixir
-def deps do
-  [
-    {:binary_gcd, git: "https://github.com/your-username/binary_gcd.git", branch: "main"}
+    {:binary_gcd, "~> 1.0"}
   ]
 end
 ```
 
 Then run:
 
-```
+```bash
 mix deps.get
 ```
 
@@ -66,13 +58,9 @@ This library implements the binary GCD algorithm, also known as Stein's algorith
 4. If both numbers are odd, subtract the smaller from the larger.
 5. Repeat until one number becomes zero.
 
-## Testing
+## Tested Platforms
 
-To run the tests:
-
-```
-mix test
-```
+* Ubuntu 22.04 / Elixir 1.18 / Erlang/OTP 28
 
 ## License
 

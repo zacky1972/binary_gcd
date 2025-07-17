@@ -4,12 +4,14 @@ defmodule BinaryGcd.MixProject do
   def project do
     [
       app: :binary_gcd,
-      version: "0.1.0",
-      elixir: "~> 1.18",
+      version: "1.0.0",
+      elixir: "~> 1.14",
       start_permanent: Mix.env() == :prod,
       deps: deps(),
       name: "Binary gcd",
-      description: "TODO: write a proper description",
+      description: """
+      An efficient Elixir implementation of the binary GCD algorithm (Stein's algorithm) for computing the greatest common divisor (GCD) of two non-negative integers using only bitwise operations and subtraction.
+      """,
       docs: docs(),
       package: package(),
       aliases: aliases(),
@@ -27,7 +29,7 @@ defmodule BinaryGcd.MixProject do
   def docs do
     [
       main: "readme",
-      extras: ["README.md"]
+      extras: ["README.md", "LICENSE.md", "CHANGELOG.md"]
     ]
   end
 
@@ -44,7 +46,7 @@ defmodule BinaryGcd.MixProject do
       check: [
         "hex.audit",
         "compile --warnings-as-errors --force",
-        "format --check-formatted",
+        "format --check-formatted --migrate",
         "credo",
         "deps.unlock --check-unused",
         "spellweaver.check",
