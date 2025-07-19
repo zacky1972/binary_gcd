@@ -87,4 +87,54 @@ defmodule BinaryGcd do
 
   def of(m, n) when m <= n, do: of(m, n - m)
   def of(m, n), do: of(n, m)
+
+  @doc """
+  Computes the greatest common divisor of a list of non-negative integers using the binary GCD algorithm.
+
+  This function extends the binary GCD algorithm to work with multiple numbers by computing
+  the GCD of the first two numbers, then using that result with the next number, and so on.
+
+  ## Parameters
+
+    * `numbers` - A list of non-negative integers
+
+  ## Returns
+
+    * The greatest common divisor of all numbers in the list
+
+  ## Examples
+
+      iex> BinaryGcd.of([48, 18, 12])
+      6
+
+      iex> BinaryGcd.of([0, 5, 10])
+      5
+
+      iex> BinaryGcd.of([12, 0, 8])
+      4
+
+      iex> BinaryGcd.of([54, 24, 36])
+      6
+
+      iex> BinaryGcd.of([17, 13, 19])
+      1
+
+      iex> BinaryGcd.of([100, 200, 300, 400])
+      100
+
+      iex> BinaryGcd.of([42])
+      42
+
+  ## Algorithm
+
+  For a list of numbers [a, b, c, d, ...], this function computes:
+  GCD(a, GCD(b, GCD(c, GCD(d, ...))))
+
+  This is equivalent to finding the GCD of all numbers in the list.
+  """
+  @spec of(list(non_neg_integer())) :: non_neg_integer()
+  def of([]), do: 1
+  def of([a]), do: a
+  def of([a, b]), do: of(a, b)
+  def of([head | tail]), do: of(head, of(tail))
 end

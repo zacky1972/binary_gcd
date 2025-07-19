@@ -1,6 +1,6 @@
 # BinaryGcd
 
-An efficient Elixir implementation of the binary GCD algorithm (Stein's algorithm) for computing the greatest common divisor (GCD) of two non-negative integers using only bitwise operations and subtraction.
+An efficient Elixir implementation of the binary GCD algorithm (Stein's algorithm) for computing the greatest common divisor (GCD) of two or more non-negative integers using only bitwise operations and subtraction.
 
 ## Features
 
@@ -18,7 +18,7 @@ Add `binary_gcd` to your list of dependencies in `mix.exs`:
 ```elixir
 def deps do
   [
-    {:binary_gcd, "~> 1.0"}
+    {:binary_gcd, "~> 1.1"}
   ]
 end
 ```
@@ -33,6 +33,8 @@ mix deps.get
 
 You can use the module directly in your code or in IEx:
 
+### Computing GCD of two numbers
+
 ```elixir
 iex> BinaryGcd.of(48, 18)
 6
@@ -44,6 +46,25 @@ iex> BinaryGcd.of(54, 24)
 6
 
 iex> BinaryGcd.of(17, 13)
+1
+```
+
+### Computing GCD of multiple numbers
+
+```elixir
+iex> BinaryGcd.of([48, 18, 12])
+6
+
+iex> BinaryGcd.of([0, 5, 10])
+5
+
+iex> BinaryGcd.of([54, 24, 36])
+6
+
+iex> BinaryGcd.of([100, 200, 300, 400])
+100
+
+iex> BinaryGcd.of([17, 13, 19])
 1
 ```
 

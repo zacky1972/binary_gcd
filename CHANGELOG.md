@@ -5,6 +5,23 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.0] - 2025-07-20
+
+### Added
+- `BinaryGcd.of/1` function for computing GCD of multiple numbers
+- Comprehensive documentation for multi-number GCD computation
+- Updated README.md with examples for both single-pair and multi-number GCD
+- Enhanced project description to reflect multi-number support
+
+### Features
+- Support for computing GCD of lists of integers
+- Iterative approach: computes GCD of first two numbers, then uses result with next number
+- Maintains same performance characteristics as single-pair computation
+
+### Technical Details
+- Extends binary GCD algorithm to work with multiple numbers
+- Backward compatible with existing `of/2` function
+
 ## [1.0.0] - 2025-07-18
 
 ### Added
@@ -37,6 +54,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Version History
 
+- **1.1.0**: Added multi-number GCD computation with `of/1` function
 - **1.0.0**: Initial stable release with complete BinaryGcd implementation
 
 ## Contributing

@@ -4,13 +4,13 @@ defmodule BinaryGcd.MixProject do
   def project do
     [
       app: :binary_gcd,
-      version: "1.0.0",
+      version: "1.1.0",
       elixir: "~> 1.14",
       start_permanent: Mix.env() == :prod,
       deps: deps(),
       name: "Binary gcd",
       description: """
-      An efficient Elixir implementation of the binary GCD algorithm (Stein's algorithm) for computing the greatest common divisor (GCD) of two non-negative integers using only bitwise operations and subtraction.
+      An efficient Elixir implementation of the binary GCD algorithm (Stein's algorithm) for computing the greatest common divisor (GCD) of two or more non-negative integers using only bitwise operations and subtraction.
       """,
       docs: docs(),
       package: package(),
